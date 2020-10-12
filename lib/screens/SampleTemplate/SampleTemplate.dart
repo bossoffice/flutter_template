@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
+// local_widget
+import 'package:flutter_template/screens/SampleTemplate/local_widget/backgroundBuilder.dart';
+import 'local_widget/TextHello.dart';
+
 class SampleTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: Align(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Hello World"), Text("this is SampleTemplate")],
+        body: Container(
+      child: SingleChildScrollView(
+        child: Stack(
+          children: [
+            backgroundBuilder(false, child: TextHello()),
+          ],
         ),
-      )),
-    );
+      ),
+    ));
   }
 }
